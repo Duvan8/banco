@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos cliente</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/actucredi.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <div class="container-fluid" action="/creditos" method="POST">
+        <div class="row">
+            <div class="col">
+                <table id="tableArticulos" class="table table-striped table-bordered" style="width: 100%;">
+                    <thead>
+                        <tr>
+                            <th>CODIGO CREDITO</th>
+                            <th>DOCUMENTO CLIENTE</th>
+                            <th>CODIGO LINEA</th>
+                            <th>MONTO PRESTAMO</th>
+                            <th>FECHA APROBADO</th>
+                            <th>PLAZO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% datos.forEach(function (datos) { %>
+                            <tr>
+                                <td><input type="text" value="<%= datos.codigocredito %>" name="codigocredito"
+                                        id="codigocredito" class="codigocredito"></td>
+                                <td><input type="text" value="<%= datos.doccli %>" name="doccli" id="doccli"
+                                        class="doc"></td>
+                                <td><input type="text" value="<%= datos.codlinea %>" name="codlinea" id="codlinea"
+                                        class="coslinea"></td>
+                                <td><input type="text" value="<%= datos.montoprestado %>" name="mostoprestado"
+                                        id="montoprestado" class="montoprestado"></td>
+                                <td><input type="text" value="<%= datos.fechaaprobada %>" name="fechaaprobada"
+                                        id="fechaaprobada" class="fechaaprobada"></td>
+                                <td><input type="text" value="<%= datos.plazo %>" name="plazo" id="plazo" class="plazo">
+                                </td>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

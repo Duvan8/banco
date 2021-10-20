@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos cliente</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/actucliente.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <h2>retirar</h2>
+    <form class="formulario" action="/cuenta" method="POST">
+        <div class="contenedor">
+            <div class="input-contenedor">
+                <i class="far fa-user"></i>
+                <input type="text" name="doccli" placeholder="documento del cliente">
+            </div>
+
+            <div class="input-contenedor">
+                <i class="far fa-address-card"></i>
+                <input type="text" name="codcun" placeholder="codigo de la cuenta">
+
+            </div>
+
+            <div class="input-contenedor">
+                <i class="fas fa-user-tag"></i>
+                <input type="text" name="saldo" placeholder="saldo">
+            </div>
+
+            <input type="submit" value="Retirar" class="button">
+        </div>
+    </form>
+</body>
+</html>
