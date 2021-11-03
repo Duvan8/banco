@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos cliente</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <div class="container-fluid" action="/cuentas" method="POST">
+        <div class="row">
+            <div class="col">
+                <nav>
+                    <a href="consignar" class="cun">consignar</a>
+                    <a href="transferir" class="can">transferir</a>
+                    <a href="retirar" class="cin">retirar</a>
+                </nav>
+                <table id="tableArticulos" class="table table-striped table-bordered" style="width: 100%;">
+                    <thead>
+                        <tr>
+                            <th>CODIGO CUENTA</th>
+                            <th>DOCUMENTO CLIENTE</th>
+                            <th>TIPO DE CUENTA</th>
+                            <th>SALDO</th>  
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% datos.forEach(function (datos) { %>
+                            <tr>
+                                <td><input type="text" value="<%= datos.codcun %>" name="codcun" id="cod" class="cod">
+                                </td>
+                                <td><input type="text" value="<%= datos.doccli %>" name="doccli" id="doc" class="doc">
+                                </td>
+                                <td><input type="text" value="<%= datos.tipcun %>" name="tipcun" id="tip" class="tip">
+                                </td>
+                                <td><input type="text" value="<%= datos.saldo %>" name="saldo" id="saldo"
+                                        class="saldo"></td>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

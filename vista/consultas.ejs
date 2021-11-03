@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/actualizar.js"></script>
+    <script src="./js/eliminar.js"></script>
+    <script src="./js/inserusu.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <a href="cerrar">cerrar Sesion</a>
+
+    <form class="formulario" action="/inserusu" method="POST">
+
+        <h1>Registrate Usuarios</h1>
+        <div class="contenedor">
+
+            <div class="input-contenedor">
+                <i class="far fa-address-card"></i>
+                <input type="text" name="doccli" class="doccli" placeholder="Documneto">
+
+            </div>
+
+            <div class="input-contenedor">
+                <i class="far fa-user"></i>
+                <input type="text" name="nomusu" class="nomusu" placeholder="Usuario">
+
+            </div>
+
+            <div class="input-contenedor">
+                <i class="fas fa-unlock"></i>
+                <input type="password" name="clave" class="clave" placeholder="Clave">
+
+            </div>
+
+            <div class="input-contenedor">
+                <i class="fas fa-user-tag"></i>
+                <input type="text" name="rol" class="rol" placeholder="Rol">
+            </div>
+
+            <div class="input-contenedor">
+                <i class="fas fa-ambulance"></i>
+                <input type="text" name="estado" class="estado" placeholder="Estado">
+            </div>
+            <div class="input-contenedor">
+                <i class="fas fa-ambulance"></i>
+                <input type="text" name="imagen" class="imagen" placeholder="Imagen">
+            </div>
+            <input type="submit" value="Registrate" class="ingre">
+        </div>
+    </form>
+    <form action="" name="frm" id="frm">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>DOCUMENTO</th>
+                    <th>USUARIO</th>
+                    <th>CLAVE</th>
+                    <th>ROL</th>
+                    <th>ESTADO</th>
+                    <th>IMAGEN</th>
+                    <th>ACTUALIZAR</th>
+                    <th>ELIMINAR</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% datos.forEach(function (datos) { %>
+                    <tr>
+                        <td><input type="text" value="<%= datos.doccli %>" name="doccli" id="doc" class="doc"></td>
+                        <td><input type="text" value="<%= datos.nomusu %>" name="nomusu" id="usu" class="usu"></td>
+                        <td><input type="text" value="<%= datos.clave %>" name="clave" id="cla" class="cla"></td>
+                        <td><input type="text" value="<%= datos.rol %>" name="rol" id="rol" class="rol"></td>
+                        <td><input type="text" value="<%= datos.estado %>" name="estado" id="est" class="est"></td>
+                        <td><input type="text" value="<%= datos.imagen %>" name="imgen" id="img" class="img"></td>
+                        <td><input type="submit" value="Actualizar" name="btnact" id="btnact" class="btnact"></td>
+                        <td><input type="submit" value="Eliminar" name="btneli" id="btneli" class="btneli"></td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+
+    </form>
+</body>
+
+</html>

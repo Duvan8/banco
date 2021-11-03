@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos cliente</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/actucliente.js"></script>
+    <script src="./js/consig.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <h2>retirar</h2>
+    <form class="formulario" action="/consig" method="POST">
+        <div class="contenedor">
+            <div class="input-contenedor">
+                <i class="far fa-user"></i>
+                <input type="text" name="doc" placeholder="documento del cliente" class="doccli">
+            </div>
+
+            <div class="input-contenedor">
+                <i class="far fa-address-card"></i>
+                <input type="text" name="cod" placeholder="codigo de la cuenta" class="cod">
+
+            </div>
+
+            <div class="input-contenedor">
+                <i class="fas fa-user-tag"></i>
+                <input type="text" name="sal" placeholder="saldo" class="sal">
+            </div>
+
+            <input type="submit" value="Consignar" class="consignar">
+        </div>
+    </form>
+    <table id="tableArticulos" class="table table-striped table-bordered" style="width: 100%;">
+        <thead>
+            <tr>
+                <th>CODIGO CUENTA</th>
+                <th>DOCUMENTO CLIENTE</th>
+                <th>TIPO DE CUENTA</th>
+                <th>SALDO</th>  
+            </tr>
+        </thead>
+        <tbody>
+            <% datos.forEach(function (datos) { %>
+                <tr>
+                    <td><input type="text" value="<%= datos.codcun %>" name="codcun" id="cod" class="codcun">
+                    </td>
+                    <td><input type="text" value="<%= datos.doccli %>" name="doccli" id="doc" class="doccli">
+                    </td>
+                    <td><input type="text" value="<%= datos.tipcun %>" name="tipcun" id="tip" class="tipcun">
+                    </td>
+                    <td><input type="text" value="<%= datos.saldo %>" name="saldo" id="saldo"
+                            class="saldo"></td>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>

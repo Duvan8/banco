@@ -1,0 +1,46 @@
+const express = require('express'); //REQUIERE UN PAQUETE
+const conexion = require('../conexion/conexion');
+const rutas = express.Router();
+const controller = require('../controlador/controller');
+//ES DONDE SE CONECTAN TODOS LOS DATOS
+rutas.get('/', controller.index);
+rutas.post('/login', controller.login);
+rutas.get('/consultas', controller.consultageneral);
+//rutas.post('/frminsertar', controller.insertar);
+rutas.get('/clinete', controller.clinete);
+rutas.get('/lineas', controller.lineas);
+rutas.get('/dtscliente', controller.mostrar);
+rutas.get('/acliente', controller.acliente);
+rutas.get('/creditos', controller.creditos);
+rutas.get('/cuentas', controller.cuentas);
+rutas.get('/usucuentas', controller.usucuentas);
+rutas.get('/vistadmin', controller.vistadmin);
+rutas.get('/vistcliente', controller.vistcliente);
+rutas.get('/usuarios', controller.usuarios);
+rutas.get('/usucliente', controller.usucliente);
+rutas.get('/usulineas', controller.usulineas);
+rutas.get('/usucreditos', controller.usucreditos);
+rutas.get('/transferir', controller.transferir);
+rutas.get('/consignar', controller.consignar);
+rutas.get('/retirar', controller.retirar);
+rutas.post('/cuenta', controller.usucuenta);
+rutas.post('/insusucli', controller.insusucli);
+rutas.post('/inserlineas', controller.inserlineas);
+rutas.post('/insercreditos', controller.insercreditos);
+rutas.post('/inserusu', controller.inserusu);
+rutas.post('/actualizar', controller.actualizar);
+rutas.post('/consig', controller.consig);
+rutas.post('/actucuentas', controller.actucuentas);
+rutas.post('/btn', controller.btn);
+rutas.post('/btnclieli', controller.btnclieli);
+rutas.post('/actucliente', controller.actucliente);
+rutas.post('/actucredi', controller.actucredi);
+rutas.post('/actulineas', controller.actulineas);
+rutas.post('/actudts', controller.actudts);
+rutas.post('/actuli', controller.actuli);
+rutas.post('/eliminar', controller.eliminar);
+rutas.post('/elicuentas', controller.elicuentas);
+rutas.post('/elilin', controller.elilin);
+rutas.post('/elicredi', controller.elicredi);
+rutas.get('/cerrar', controller.cerrar);
+module.exports = rutas
